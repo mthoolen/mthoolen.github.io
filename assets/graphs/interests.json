@@ -1,0 +1,132 @@
+{
+  "nodes": [
+    {
+      "id": "home",
+      "label": "Subjects",
+      "size": 16
+    },
+    {
+      "id": "math",
+      "label": "Math",
+      "size": 15
+    },
+    {
+      "id": "categ",
+      "label": "Category Theory",
+      "size": 13
+    },
+    {
+      "id": "socpsy",
+      "label": "Social psychology",
+      "size": 15
+    },
+    {
+      "id": "ikeaeff",
+      "label": "IKEA Effect",
+      "size": 13
+    },{
+      "id": "zeigeff",
+      "label": "Zeigarnik Effect",
+      "size": 13
+    },
+    {
+      "id": "softeng",
+      "label": "Software Engineering",
+      "size": 15
+    },
+    {
+      "id": "softengproc",
+      "label": "Process",
+      "size": 13
+    },
+    {
+      "id": "devops",
+      "label": "DevOps",
+      "size": 13
+    },
+    {
+      "id": "xp",
+      "label": "Xtreme Programming",
+      "size": 13
+    },{
+      "id": "agile",
+      "label": "Agile",
+      "size": 13
+    },{
+      "id": "paradigm",
+      "label": "Programming paradigmes",
+      "size": 13
+    },
+    {
+      "id": "fp",
+      "label": "Functional",
+      "size": 13
+    },
+    {
+      "id": "oo",
+      "label": "Object Oriented",
+      "size": 13
+    }
+  ],
+  "edges": [
+    {
+      "id": "homesoc",
+      "source": "home",
+      "target": "socpsy"
+    },
+    {
+      "id": "homemath",
+      "source": "home",
+      "target": "math"
+    },
+    {
+      "id": "socik",
+      "source": "socpsy",
+      "target": "ikeaeff"
+    },{
+      "id": "socze",
+      "source": "socpsy",
+      "target": "zeigeff"
+    },
+    {
+      "id": "home",
+      "source": "home",
+      "target": "softeng"
+    },{
+      "id": "categ",
+      "source": "math",
+      "target": "categ"
+    },
+    {
+      "id": "softengproc",
+      "source": "softeng",
+      "target": "softengproc"
+    },{
+      "id": "devops",
+      "source": "softengproc",
+      "target": "devops"
+    },{
+      "id": "agile",
+      "source": "softengproc",
+      "target": "agile"
+    },{
+      "id": "xp",
+      "source": "softengproc",
+      "target": "xp"
+    },{
+      "id": "paradigm",
+      "source": "paradigm",
+      "target": "softeng"
+    },
+    {
+      "id": "fp",
+      "source": "fp",
+      "target": "paradigm"
+    },
+    {
+      "id": "oo",
+      "source": "oo",
+      "target": "paradigm"
+    }
+  ]
+}

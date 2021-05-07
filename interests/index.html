@@ -1,0 +1,64 @@
+---
+layout: page
+current: interests
+title: Interests
+navigation: true
+logo: 'assets/images/ghost.png'
+class: page-template
+subclass: 'post page'
+---
+<script src="../assets/js/sigma.min.js"></script>
+<script src="../assets/js/sigma.parsers.json.js"></script>
+<script src="../assets/js/sigma.forceatlas2.supervisor.js"></script>
+<script src="../assets/js/sigma.forceatlas2.worker.js"></script>
+<script src="../assets/js/sigma.plugins.dragNodes.js"></script>
+
+<div id="container" class="container">
+    <style>
+        #graph-container {
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            position: absolute;
+            height: 300%;
+        }
+    </style>
+</div>
+<div id="graph-container"></div>
+<script>
+    const g = fetch('../assets/graphs/interests.json')
+        .then(response => response.json())
+        .then(it => {
+            let two = it
+            two.nodes = it.nodes.map(node => {
+                node.x = Math.random()
+                node.y = Math.random()
+                return node
+            })
+            return two
+        }).then(it => {
+            console.log(it);
+            return it
+        })
+        .then(g => new sigma({
+            graph: g,
+            container: 'graph-container',
+            settings: {
+                defaultNodeColor: '#ec5148',
+                labelThreshold: 0,
+                sideMargin: 1,
+                maxNodeSize: 16
+            }
+        }))
+        .then(s => s.startForceAtlas2({worker: true, barnesHutOptimize: false}))
+        .then(s => {
+            sigma.plugins.dragNodes(s, s.renderers[0]);
+            return s
+        })
+        .then(s => setTimeout(() => {
+            s.stopForceAtlas2()
+        }, 100));
+
+</script>
+

@@ -1,0 +1,59 @@
+{
+  "nodes": [
+    {
+      "id": "home",
+      "label": "Subjects",
+      "x": 0,
+      "y": 0,
+      "size": 16
+    },
+    {
+      "id": "socpsy",
+      "label": "Social psychology",
+      "x": 1,
+      "y": 0.34,
+      "size": 15
+    },
+    {
+      "id": "ikeaeff",
+      "label": "IKEA Effect",
+      "x": 2,
+      "y": 2,
+      "size": 13
+    },{
+      "id": "zeigeff",
+      "label": "Zeigarnik Effect",
+      "x": 2,
+      "y": 1,
+      "size": 13
+    },
+    {
+      "id": "softeng",
+      "label": "Software Engineering",
+      "x": -1,
+      "y": -0.43,
+      "size": 16
+    }
+  ],
+  "edges": [
+    {
+      "id": "homesoc",
+      "source": "home",
+      "target": "socpsy"
+    },
+    {
+      "id": "socik",
+      "source": "socpsy",
+      "target": "ikeaeff"
+    },{
+      "id": "socze",
+      "source": "socpsy",
+      "target": "zeigeff"
+    },
+    {
+      "id": "home",
+      "source": "home",
+      "target": "softeng"
+    }
+  ]
+}
