@@ -1,132 +1,168 @@
 {
   "nodes": [
     {
-      "id": "home",
-      "label": "Subjects",
-      "size": 16
+      "id": "Subjects",
+      "group": 1
     },
     {
-      "id": "math",
-      "label": "Math",
-      "size": 15
+      "id": "Math",
+      "group": 2
     },
     {
-      "id": "categ",
-      "label": "Category Theory",
-      "size": 13
+      "id": "Category Theory",
+      "group": 2
     },
     {
-      "id": "socpsy",
-      "label": "Social psychology",
-      "size": 15
+      "id": "Social psychology",
+      "group": 3
     },
     {
-      "id": "ikeaeff",
-      "label": "IKEA Effect",
-      "size": 13
+      "id": "IKEA Effect",
+      "group": 3
+    },
+    {
+      "id": "Zeigarnik Effect",
+      "group": 3
+    },
+    {
+      "id": "Software Engineering",
+      "group": 4
+    },
+    {
+      "id": "Process",
+      "group": 5
+    },
+    {
+      "id": "DevOps",
+      "group": 5
+    },
+    {
+      "id": "Xtreme Programming",
+      "group": 5
+    },    {
+      "id": "Test Driven Development",
+      "group": 5
+    }, {
+      "id": "Pairing",
+      "group": 5
+    },    {
+      "id": "Domain Driven Design",
+      "group": 5
+    },
+    {
+      "id": "Agile",
+      "group": 5
+    },
+    {
+      "id": "Programming paradigmes",
+      "group": 6
+    },
+    {
+      "id": "Functional",
+      "group": 6
+    },
+    {
+      "id": "Object Oriented",
+      "group": 6
     },{
-      "id": "zeigeff",
-      "label": "Zeigarnik Effect",
-      "size": 13
-    },
-    {
-      "id": "softeng",
-      "label": "Software Engineering",
-      "size": 15
-    },
-    {
-      "id": "softengproc",
-      "label": "Process",
-      "size": 13
-    },
-    {
-      "id": "devops",
-      "label": "DevOps",
-      "size": 13
-    },
-    {
-      "id": "xp",
-      "label": "Xtreme Programming",
-      "size": 13
+      "id": "Languages",
+      "group": 7
     },{
-      "id": "agile",
-      "label": "Agile",
-      "size": 13
+      "id": "Haskell",
+      "group": 7
     },{
-      "id": "paradigm",
-      "label": "Programming paradigmes",
-      "size": 13
-    },
-    {
-      "id": "fp",
-      "label": "Functional",
-      "size": 13
-    },
-    {
-      "id": "oo",
-      "label": "Object Oriented",
-      "size": 13
+      "id": "Java",
+      "group": 7
+    },{
+      "id": "Javascript",
+      "group": 7
+    },{
+      "id": "Clojure",
+      "group": 7
+    },{
+      "id": "Kotlin",
+      "group": 7
     }
   ],
-  "edges": [
+  "links": [
     {
-      "id": "homesoc",
-      "source": "home",
-      "target": "socpsy"
+      "source": "Subjects",
+      "target": "Social psychology"
     },
     {
-      "id": "homemath",
-      "source": "home",
-      "target": "math"
+      "source": "Subjects",
+      "target": "Math"
     },
     {
-      "id": "socik",
-      "source": "socpsy",
-      "target": "ikeaeff"
-    },{
-      "id": "socze",
-      "source": "socpsy",
-      "target": "zeigeff"
+      "source": "Social psychology",
+      "target": "IKEA Effect"
     },
     {
-      "id": "home",
-      "source": "home",
-      "target": "softeng"
-    },{
-      "id": "categ",
-      "source": "math",
-      "target": "categ"
+      "source": "Social psychology",
+      "target": "Zeigarnik Effect"
     },
     {
-      "id": "softengproc",
-      "source": "softeng",
-      "target": "softengproc"
-    },{
-      "id": "devops",
-      "source": "softengproc",
-      "target": "devops"
-    },{
-      "id": "agile",
-      "source": "softengproc",
-      "target": "agile"
-    },{
-      "id": "xp",
-      "source": "softengproc",
-      "target": "xp"
-    },{
-      "id": "paradigm",
-      "source": "paradigm",
-      "target": "softeng"
+      "source": "Subjects",
+      "target": "Software Engineering"
     },
     {
-      "id": "fp",
-      "source": "fp",
-      "target": "paradigm"
+      "source": "Math",
+      "target": "Category Theory"
     },
     {
-      "id": "oo",
-      "source": "oo",
-      "target": "paradigm"
+      "source": "Software Engineering",
+      "target": "Process"
+    },
+    {
+      "source": "Process",
+      "target": "DevOps"
+    },
+    {
+      "source": "Process",
+      "target": "Agile"
+    },
+    {
+      "source": "Process",
+      "target": "Xtreme Programming"
+    },{
+      "source": "Process",
+      "target": "Domain Driven Design"
+    },{
+      "source": "Xtreme Programming",
+      "target": "Test Driven Development"
+    },{
+      "source": "Xtreme Programming",
+      "target": "Pairing"
+    },
+    {
+      "source": "Programming paradigmes",
+      "target": "Software Engineering"
+    },
+    {
+      "source": "Functional",
+      "target": "Programming paradigmes"
+    },    {
+      "source": "Object Oriented",
+      "target": "Programming paradigmes"
+    },
+    {
+      "source": "Software Engineering",
+      "target": "Languages"
+    },    {
+      "source": "Languages",
+      "target": "Haskell"
+    },    {
+      "source": "Languages",
+      "target": "Java"
+    },    {
+      "source": "Languages",
+      "target": "Javascript"
+    },    {
+      "source": "Languages",
+      "target": "Clojure"
+    },{
+      "source": "Languages",
+      "target": "Kotlin"
     }
   ]
 }

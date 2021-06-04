@@ -8,10 +8,8 @@ class: page-template
 subclass: 'post page'
 ---
 
-Ghost is professional publishing platform designed for modern journalism. This is a demo site of a basic Ghost install to give you a general sense of what a new Ghost site looks like when set up for the first time.
+My name is Matthijs, and I'm a Software Engineer.
 
-> If you'd like to set up a site like this for yourself, head over to [Ghost.org](https://ghost.org/) and start a free 14 day trial to give Ghost a try!
+I'm a motivated, energetic person who's got a passion for making quality Software. I'm a big fan of things like Extreme Programming, Clean Code and Domain Driven Design. In my free time I like to play around with other languages and paradigms. 
 
-If you're a developer: Ghost is a completely open source (MIT) Node.js application built on a JSON API with an Ember.js admin client. It works with MySQL and SQLite, and is publicly available [on Github](https://github.com/TryGhost/ghost).
-
-If you need help with using Ghost, you'll find a ton of useful articles on [our knowledgebase](https://help.ghost.org/), as well as extensive [developer documentation](https://docs.ghost.org/).
+I believe that the best Software is as simple as possible and that collaboration is one of the most important tools in making Software right. I'm very eager to learn and like to participate in workshops, hackatons and meetups. I also love spending time on topics like Domain Driven Design, DevOps and Social Psychology.

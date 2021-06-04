@@ -1,59 +1,41 @@
 {
   "nodes": [
     {
-      "id": "home",
-      "label": "Subjects",
-      "x": 0,
-      "y": 0,
-      "size": 16
+      "id": "Subjects",
+      "group": 1
     },
     {
-      "id": "socpsy",
-      "label": "Social psychology",
-      "x": 1,
-      "y": 0.34,
-      "size": 15
+      "id": "Social psychology",
+      "group": 2
     },
     {
-      "id": "ikeaeff",
-      "label": "IKEA Effect",
-      "x": 2,
-      "y": 2,
-      "size": 13
+      "id": "IKEA Effect",
+      "url": "/ikea-effect",
+      "group": 2
     },{
-      "id": "zeigeff",
-      "label": "Zeigarnik Effect",
-      "x": 2,
-      "y": 1,
-      "size": 13
+      "id": "Zeigarnik Effect",
+      "group":2
     },
     {
-      "id": "softeng",
-      "label": "Software Engineering",
-      "x": -1,
-      "y": -0.43,
-      "size": 16
+      "id": "Software Engineering",
+      "group": 3
     }
   ],
-  "edges": [
+  "links": [
     {
-      "id": "homesoc",
-      "source": "home",
-      "target": "socpsy"
+      "source": "Subjects",
+      "target": "Social psychology"
     },
     {
-      "id": "socik",
-      "source": "socpsy",
-      "target": "ikeaeff"
+      "source": "Social psychology",
+      "target": "IKEA Effect"
     },{
-      "id": "socze",
-      "source": "socpsy",
-      "target": "zeigeff"
+      "source": "Social psychology",
+      "target": "Zeigarnik Effect"
     },
     {
-      "id": "home",
-      "source": "home",
-      "target": "softeng"
+      "source": "Subjects",
+      "target": "Software Engineering"
     }
   ]
 }

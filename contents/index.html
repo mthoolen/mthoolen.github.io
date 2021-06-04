@@ -7,57 +7,121 @@ logo: 'assets/images/ghost.png'
 class: page-template
 subclass: 'post page'
 ---
-<script src="../assets/js/sigma.min.js"></script>
-<script src="../assets/js/sigma.parsers.json.js"></script>
-<script src="../assets/js/sigma.forceatlas2.supervisor.js"></script>
-<script src="../assets/js/sigma.forceatlas2.worker.js"></script>
-<script src="../assets/js/sigma.plugins.dragNodes.js"></script>
+<script src="https://d3js.org/d3.v4.js"></script>
+<style>
 
-<div id="container" class="container">
-    <style>
-        #graph-container {
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            position: absolute;
-            height: 300%;
-        }
-    </style>
-</div>
-<div id="graph-container"></div>
+    .links line {
+        stroke: #999;
+        stroke-opacity: 0.6;
+    }
+
+    .nodes circle {
+        stroke: #fff;
+        stroke-width: 1.5px;
+    }
+
+    .node text {
+        pointer-events: none;
+        font: .35rem sans-serif;
+    }
+
+
+
+</style>
+<svg class="target" width="960" height="600"></svg>
 <script>
-    const g = fetch('../assets/graphs/contents.json')
-        .then(response => response.json())
-        .then(it => {
-            let two = it
-            two.nodes = it.nodes.map(node => {
-                node.x = Math.random()
-                node.y = Math.random()
-                return node
-            })
-            return two
-        }).then(it => {
-            console.log(it);
-            return it
-        })
-        .then(g => new sigma({
-            graph: g,
-            container: 'graph-container',
-            settings: {
-                defaultNodeColor: '#ec5148',
-                labelThreshold: 0,
-                sideMargin: 1,
-                maxNodeSize: 16
-            }
-        }))
-        .then(s => s.startForceAtlas2({worker: true, barnesHutOptimize: false}))
-        .then(s => {
-            sigma.plugins.dragNodes(s, s.renderers[0]);
-            return s
-        })
-        .then(s => setTimeout(() => {
-            s.stopForceAtlas2()
-        }, 100));
 
+    let svg = d3.select(".target"),
+        width = +svg.attr("width"),
+        height = +svg.attr("height");
+
+    let color = d3.scaleOrdinal(d3.schemeCategory20);
+
+    let g = svg.append("g")
+        .attr("class", "everything");
+
+    let zoom_handler = d3.zoom()
+        .on("zoom", zoom_actions);
+
+    svg.call(zoom_handler)
+        .call(zoom_handler.transform,d3.zoomIdentity.translate(-width/2,-height/2).scale(2));
+
+    let simulation = d3.forceSimulation()
+        .force("link", d3.forceLink().id(function(d) { return d.id; }))
+        .force("charge", d3.forceManyBody())
+        .force("center", d3.forceCenter(width / 2, height / 2));
+
+    d3.json("../assets/graphs/contents.json", function(error, graph) {
+        if (error) throw error;
+        let link = g.append("g")
+            .attr("class", "links")
+            .selectAll("line")
+            .data(graph.links)9
+            .enter().append("line")
+            .attr("stroke-width", d => {return Math.sqrt(d.value); });
+
+        let node = g.append("g")
+            .attr("class", "nodes")
+            .selectAll("g")
+            .data(graph.nodes)
+            .enter().append("a")
+            .attr("class","node")
+            .attr("xlink:href", d => {return d.url})
+
+        node.append("circle")
+            .attr("r", 5)
+            .attr("fill", function(d) { return color(d.group); })
+            .call(d3.drag()
+                .on("start", dragstarted)
+                .on("drag", dragged)
+                .on("end", dragended));
+
+
+        node.append("text")
+            .text(d => {return d.id})
+            .attr('x', 6)
+            .attr('dy', ".35rem");
+
+        node.append("title")
+            .text(function(d) { return d.id; });
+
+        simulation
+            .nodes(graph.nodes)
+            .on("tick", ticked);
+
+        simulation.force("link")
+            .links(graph.links);
+
+        function ticked() {
+            link
+                .attr("x1", d => {return d.source.x})
+                .attr("y1", d => {return d.source.y})
+                .attr("x2", d => {return d.target.x})
+                .attr("y2", d => {return d.target.y});
+
+            node.attr("transform", d=> {return "translate(" + d.x + "," + d.y + ")";})
+        }
+    });
+
+
+    function zoom_actions(){
+        g.attr("transform", d3.event.transform)
+    }
+
+    function dragstarted(d) {
+        if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+        d.fx = d.x;
+        d.fy = d.y;
+    }
+
+    function dragged(d) {
+        d.fx = d3.event.x;
+        d.fy = d3.event.y;
+    }
+
+    function dragended(d) {
+        if (!d3.event.active) simulation.alphaTarget(0);
+        d.fx = null;
+        d.fy = null;
+    }
 </script>
