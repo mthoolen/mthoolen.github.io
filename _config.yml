@@ -5,7 +5,7 @@ paginate: 100
 language: 'en-uk'
 words_per_minute: 200
 
-baseurl: /
+baseurl: "/"
 
 # Website info
 title: From my mind
