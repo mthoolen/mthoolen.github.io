@@ -8,8 +8,8 @@ words_per_minute: 200
 baseurl: /
 
 # Website info
-title: Matthijs
-description: Random thoughts and ideas
+title: From my mind
+description: Thoughts and ideas
 cover: assets/images/blog-cover.jpg
 logo: assets/images/blog-icon.png
 logo_dark: assets/images/blog-icon.png
