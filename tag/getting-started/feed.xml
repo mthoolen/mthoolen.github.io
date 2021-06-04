@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<feed xmlns="http://www.w3.org/2005/Atom" >
+  <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
+  <link href="/tag/getting-started/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="/" rel="alternate" type="text/html" />
+  <updated>2021-06-04T17:27:33+00:00</updated>
+  <id>/tag/getting-started/feed.xml</id>
+
+  
+  
+  
+
+  
+    <title type="html">From my mind | </title>
+  
+
+  
+    <subtitle>Thoughts and ideas</subtitle>
+  
+
+  
+
+  
+    
+      
+    
+  
+
+  
+  
+
+  
+    <entry>
+      <title type="html">Welcome to this place</title>
+      <link href="/welcome" rel="alternate" type="text/html" title="Welcome to this place" />
+      <published>2021-04-10T10:00:00+00:00</published>
+      <updated>2021-04-10T10:00:00+00:00</updated>
+      <id>/welcome</id>
+      <content type="html" xml:base="/welcome">&lt;p&gt;Hello there! Welcome to this place.&lt;/p&gt;
+
+&lt;p&gt;Here, I try to gather my thoughts on subjects that interest me. At the moment, these subjects include anything software engineering related, but also include fields like agile, social psychology, and mathematics.&lt;/p&gt;
+
+&lt;p&gt;Check back here every so often to find out what’s new!&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Matthijs</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="Getting started" />
+      
+
+      
+        <summary type="html">Hello there! Welcome to this place.</summary>
+      
+
+      
+      
+    </entry>
+  
+</feed>

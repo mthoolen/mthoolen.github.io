@@ -1,0 +1,41 @@
+{
+  "nodes": [
+    {
+      "id": "Subjects",
+      "group": 1
+    },
+    {
+      "id": "Social psychology",
+      "group": 2
+    },
+    {
+      "id": "IKEA Effect",
+      "url": "/ikea-effect",
+      "group": 2
+    },{
+      "id": "Zeigarnik Effect",
+      "group":2
+    },
+    {
+      "id": "Software Engineering",
+      "group": 3
+    }
+  ],
+  "links": [
+    {
+      "source": "Subjects",
+      "target": "Social psychology"
+    },
+    {
+      "source": "Social psychology",
+      "target": "IKEA Effect"
+    },{
+      "source": "Social psychology",
+      "target": "Zeigarnik Effect"
+    },
+    {
+      "source": "Subjects",
+      "target": "Software Engineering"
+    }
+  ]
+}

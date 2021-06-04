@@ -1,0 +1,168 @@
+{
+  "nodes": [
+    {
+      "id": "Subjects",
+      "group": 1
+    },
+    {
+      "id": "Math",
+      "group": 2
+    },
+    {
+      "id": "Category Theory",
+      "group": 2
+    },
+    {
+      "id": "Social psychology",
+      "group": 3
+    },
+    {
+      "id": "IKEA Effect",
+      "group": 3
+    },
+    {
+      "id": "Zeigarnik Effect",
+      "group": 3
+    },
+    {
+      "id": "Software Engineering",
+      "group": 4
+    },
+    {
+      "id": "Process",
+      "group": 5
+    },
+    {
+      "id": "DevOps",
+      "group": 5
+    },
+    {
+      "id": "Xtreme Programming",
+      "group": 5
+    },    {
+      "id": "Test Driven Development",
+      "group": 5
+    }, {
+      "id": "Pairing",
+      "group": 5
+    },    {
+      "id": "Domain Driven Design",
+      "group": 5
+    },
+    {
+      "id": "Agile",
+      "group": 5
+    },
+    {
+      "id": "Programming paradigmes",
+      "group": 6
+    },
+    {
+      "id": "Functional",
+      "group": 6
+    },
+    {
+      "id": "Object Oriented",
+      "group": 6
+    },{
+      "id": "Languages",
+      "group": 7
+    },{
+      "id": "Haskell",
+      "group": 7
+    },{
+      "id": "Java",
+      "group": 7
+    },{
+      "id": "Javascript",
+      "group": 7
+    },{
+      "id": "Clojure",
+      "group": 7
+    },{
+      "id": "Kotlin",
+      "group": 7
+    }
+  ],
+  "links": [
+    {
+      "source": "Subjects",
+      "target": "Social psychology"
+    },
+    {
+      "source": "Subjects",
+      "target": "Math"
+    },
+    {
+      "source": "Social psychology",
+      "target": "IKEA Effect"
+    },
+    {
+      "source": "Social psychology",
+      "target": "Zeigarnik Effect"
+    },
+    {
+      "source": "Subjects",
+      "target": "Software Engineering"
+    },
+    {
+      "source": "Math",
+      "target": "Category Theory"
+    },
+    {
+      "source": "Software Engineering",
+      "target": "Process"
+    },
+    {
+      "source": "Process",
+      "target": "DevOps"
+    },
+    {
+      "source": "Process",
+      "target": "Agile"
+    },
+    {
+      "source": "Process",
+      "target": "Xtreme Programming"
+    },{
+      "source": "Process",
+      "target": "Domain Driven Design"
+    },{
+      "source": "Xtreme Programming",
+      "target": "Test Driven Development"
+    },{
+      "source": "Xtreme Programming",
+      "target": "Pairing"
+    },
+    {
+      "source": "Programming paradigmes",
+      "target": "Software Engineering"
+    },
+    {
+      "source": "Functional",
+      "target": "Programming paradigmes"
+    },    {
+      "source": "Object Oriented",
+      "target": "Programming paradigmes"
+    },
+    {
+      "source": "Software Engineering",
+      "target": "Languages"
+    },    {
+      "source": "Languages",
+      "target": "Haskell"
+    },    {
+      "source": "Languages",
+      "target": "Java"
+    },    {
+      "source": "Languages",
+      "target": "Javascript"
+    },    {
+      "source": "Languages",
+      "target": "Clojure"
+    },{
+      "source": "Languages",
+      "target": "Kotlin"
+    }
+  ]
+}
